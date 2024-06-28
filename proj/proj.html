@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proj</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+</head>
+
+<body>
+    <a-scene background="color:#000">
+        <a-entity position="0 2 10"><a-camera></a-camera></a-entity>
+
+        <a-entity>
+            <!-- body -->
+            <a-sphere radius="2.6" color="blue"></a-sphere>
+            <a-sphere position="0 3 0" radius="3" color="blue"></a-sphere>
+            <a-torus position="0 1.3 0" radius=2.3 rotation="90 0 0" color="red"></a-torus>
+
+            <a-entity position="0 1.3 3">
+                <a-sphere radius="0.3" color="yellow">
+                    <a-torus rotation="90 0 0" position="0 0.05 0" radius="0.28" radius-tubular="0.03"
+                        color="yellow"></a-torus>
+                    <a-sphere radius="0.1" position="0 -0.08 0.2" color="black"></a-sphere>
+                </a-sphere>
+            </a-entity>
+
+            <a-ring position="0 0 2.7" radius-inner="0.01" theta-start="180" theta-length="180"></a-ring>
+
+        </a-entity>
+        <a-entity>
+            <!-- legs-->
+
+            <a-cylinder position="1 -3 0" radius="1" height="0.9" color="blue"> </a-cylinder>
+            <a-cylinder position="-1 -3 0" radius="1" height="0.9" color="blue"> </a-cylinder>
+
+            <a-torus position="1 -3.1 0" rotation="90 0 0" radius="0.8" color="white"></a-torus>
+            <a-torus position="-1 -3.1 0" rotation="90 0 0" radius="0.8" color="white"></a-torus>
+        </a-entity>
+        <a-entity>
+            <!-- hands  -->
+            <a-cone position="3 0.3 0" rotation="0 0 -90" radius-top="0.7" height="2" color="blue"> </a-cone>
+            <a-cone position="-3 0.3 0" rotation="0 0 90" radius-top="0.7" height="2" color="blue"> </a-cone>
+            <a-sphere position="4 0.3 0"></a-sphere>
+            <a-sphere position="-4 0.3 0"></a-sphere>
+        </a-entity>
+
+        <a-entity>
+            <!-- both eyes container -->
+            <!-- rotate each inner eye thing and move both the eyes side side -->
+            <a-entity position="1 3.6 2.7">
+                <a-sphere
+                    animation="property:position;to:0.5 0 0;from:0 0 0;dir:alternate;easing:linear;loop:true;dur:1000"
+                    radius="0.7">
+                    <a-entity animation="property:rotation;to:0 0 -360;easing:linear;loop:true;dur:10000">
+                        <a-sphere position="0.3 0 0.7" radius="0.2" color="#000"></a-sphere>
+                    </a-entity>
+                </a-sphere>
+            </a-entity>
+
+            <a-entity position="-1 3.6 2.7">
+                <a-sphere
+                    animation="property:position;to:-0.5 0 0;from:0 0 0;dir:alternate;easing:linear;loop:true;dur:1000"
+                    radius="0.7">
+                    <a-entity animation="property:rotation;to:0 0 360;easing:linear;loop:true;dur:10000">
+                        <a-sphere position="0.3 0 0.7" radius="0.2" color="#000"></a-sphere>
+                    </a-entity>
+                </a-sphere>
+            </a-entity>
+
+            <a-torus position="0 2.8 3" rotation="0 0 180" radius-tubular="0.03" arc="180">
+                <a-cylinder position="1 0.1 3" radius="0.03" rotation="0 0 100" height="0.5"></a-cylinder>
+                <a-cylinder position="1 -0.1 3" radius="0.03" rotation="0 0 95" height="0.5"></a-cylinder>
+                <a-cylinder position="1 -0.3 3" radius="0.03" rotation="0 0 90" height="0.5"></a-cylinder>
+
+                <a-cylinder position="-1 0.1 3" radius="0.03" rotation="0 0 -100" height="0.5"></a-cylinder>
+                <a-cylinder position="-1 -0.1 3" radius="0.03" rotation="0 0 -95" height="0.5"></a-cylinder>
+                <a-cylinder position="-1 -0.3 3" radius="0.03" rotation="0 0 -90" height="0.5"></a-cylinder>
+
+            </a-torus>
+        </a-entity>
+
+        <a-entity>
+            <a-cylinder position="0 6.5 0" radius="0.1" height="1.6" color="yellow"></a-cylinder>
+            <a-entity animation="property:rotation;to:0 360 0;easing:linear;loop:true;dur:1000">
+                <a-cylinder position="0 7.25 0" rotation="-90 0 0" radius="0.1" height="3" color="yellow"></a-cylinder>
+            </a-entity>
+        </a-entity>
+
+    </a-scene>
+</body>
+
+</html>
